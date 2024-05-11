@@ -6,24 +6,22 @@
     <link href="css/main.css" rel="stylesheet" />
     <script src="js/vendor/angular.min.js"></script>
   </head>
-  <body>
+  <body ng-app="Top10App">
     <div class="header">
       <div class="container">
         10
       </div>
     </div>
 
-    <div class="main">
+    <div class="main" ng-controller="MainController">
       <div class="container">
         <div class="content">
 
-          <!--
-          TODO: Loop through shows and display each one with this HTML
-          <div>
+          <!-- TODO: Loop through shows and display each one with this HTML -->
+          <div ng-repeat="show in shows">
             <div class="rank">{{$index + 1}}</div>
-            
-            </div>
-          -->
+            <tv-show info="show"></tv-show>
+          </div>
 
         </div>
       </div>
@@ -36,9 +34,10 @@
     <script src="js/controllers/MainController.js"></script>
 
     <!-- Directives -->
-    
+    <script src="js/directives/tvShow.js"></script>
 
     <!-- Services -->
+    <script src="js/services/shows.js"></script>
     
   </body>
 </html>
